@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.css","sources":["styles.css"],"sourcesContent":["*,\r\n*:before,\r\n*:after {\r\n    box-sizing: border-box;\r\n}     "],"names":[],"mappings":"AAAA,AAAA,CAAC;AACD,CAAC,AAAA,OAAO;AACR,CAAC,AAAA,MAAM,CAAC;EACJ,UAAU,EAAE,UAAU,GACzB"}
