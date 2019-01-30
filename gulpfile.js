@@ -5,24 +5,25 @@
   var sourcemaps  = require('gulp-sourcemaps');
   var browserSync = require('browser-sync').create();
 
-  proxy: "localhost/nerdshades-wp"
+
 
 gulp.task('sass', function() {
-    return gulp.src('scss/**/*.scss')
+    return gulp.src('scss/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(rename('styles.css'))
+    .pipe(rename('style.css'))
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./css/'))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.reload({stream: true}));
 });
 
+/*
 gulp.task('sass-watch', gulp.series('sass'), function (done) {
     browserSync.reload();
     done();
 });
 
-
+*/
 //changes to watch
 gulp.task('watch', function() {
     browserSync.init({

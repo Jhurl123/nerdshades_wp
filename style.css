@@ -1,15 +1,54 @@
 /*
-Theme Name: Twenty Seventeen
-Theme URI: https://wordpress.org/themes/twentyseventeen/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
-Version: 2.0
+Theme Name: Nerd Shades
+Author: Justin Hurley
+Description: Mock site to sell sunglasses, ported to wordpress
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: twentyseventeen
+Text Domain: nerd shades
 Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 */
+.main-navigation {
+  width: 100%;
+  background-color: #ADD8E6;
+  position: relative; }
+  .main-navigation_logo_image {
+    height: 50px;
+    margin: 0 1rem; }
+  .main-navigation .menu {
+    float: right;
+    width: 100%; }
+    .main-navigation .menu li {
+      list-style-type: none;
+      display: inline;
+      margin: .75rem 2rem; }
+      .main-navigation .menu li a {
+        text-decoration: none; }
+  .main-navigation .menu-primary-container {
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 1.75rem;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%); }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  outline: red;
+  color: black;
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Futura', 'sans-serif';
+  font-size: 1.25rem; }
+
+a {
+  text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */

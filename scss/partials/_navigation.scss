@@ -1,0 +1,37 @@
+.main-navigation {
+    width: 100%;
+    background-color: #ADD8E6;
+    position: relative;
+
+    &_logo_image {
+        height: 50px;
+        margin: 0 1rem;
+    }
+
+    & .menu {
+        float: right;
+        width: 100%;
+
+
+        li {
+            list-style-type: none;
+            display: inline;
+            margin: .75rem 2rem;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+
+    & .menu-primary-container {
+        width: 50%;
+        display: inline-block;
+        margin-bottom: 1.75rem;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+    }
+
+}

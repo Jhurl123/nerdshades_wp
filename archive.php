@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage nerdshades
+ * @subpackage Nerd_Shades
  * @since 1.0
  * @version 1.0
  */
