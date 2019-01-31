@@ -8,29 +8,62 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: nerd shades
 Tags:
 */
+/*
+*
+* Varibales to be used throughout the scss
+*
+*/
 .main-navigation {
   width: 100%;
-  background-color: #ADD8E6;
+  background-color: #f7f7f7;
   position: relative; }
   .main-navigation_logo_image {
     height: 50px;
     margin: 0 1rem; }
-  .main-navigation .menu {
-    float: right;
-    width: 100%; }
-    .main-navigation .menu li {
-      list-style-type: none;
-      display: inline;
-      margin: .75rem 2rem; }
-      .main-navigation .menu li a {
-        text-decoration: none; }
   .main-navigation .menu-primary-container {
     width: 50%;
     display: inline-block;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 30%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    padding-top: 2.5em; }
+
+.navigation_top-bar {
+  float: left; }
+  .navigation_top-bar .menu-item {
+    list-style-type: none;
+    display: inline;
+    margin: 0 2rem; }
+  .navigation_top-bar a {
+    position: relative;
+    text-decoration: none;
+    padding: 0;
+    transition: all .2s ease-in-out;
+    padding-bottom: .255em; }
+  .navigation_top-bar a:after {
+    width: 0;
+    display: block;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    transition: width .8s ease; }
+  .navigation_top-bar a:hover:after {
+    content: ' ';
+    width: 100%;
+    left: 0;
+    background: #000; }
+
+.navigation_dropdown {
+  width: 100%;
+  height: 500px;
+  background-color: #dedede; }
+
+.navigation_drop-nav {
+  width: 50%;
+  margin: 0 auto; }
 
 *,
 *:before,

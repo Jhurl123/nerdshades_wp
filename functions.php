@@ -79,6 +79,7 @@ function ns_scripts() {
 
     //Styles===========
     wp_enqueue_style('ns_style', get_stylesheet_uri());
+    wp_enqueue_style('ns_style_icons', get_template_directory_uri() . '/node_modules/@fortawesome/fontawesome-free/css/all.css');
 
     //Scripts==============
     wp_enqueue_script('ns-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true );

@@ -1,6 +1,6 @@
 .main-navigation {
     width: 100%;
-    background-color: #ADD8E6;
+    background-color: $base-color;
     position: relative;
 
     &_logo_image {
@@ -8,30 +8,71 @@
         margin: 0 1rem;
     }
 
-    & .menu {
-        float: right;
-        width: 100%;
-
-        li {
-            list-style-type: none;
-            display: inline;
-            margin: .75rem 2rem;
-
-            a {
-                text-decoration: none;
-            }
-
-        }
-
-    }
-
     & .menu-primary-container {
         width: 50%;
         display: inline-block;
         position: absolute;
-        top: 50%;
+        top: 0;
         left: 30%;
         transform: translate(-50%, -50%);
+        padding-top: 2.5em;
+    }
+
+}
+
+.navigation {
+
+    &_top-bar {
+        float: left;
+
+        & .menu-item {
+            list-style-type: none;
+            display: inline;
+            margin: 0 2rem;
+
+        }
+
+        a {
+            position: relative;
+            text-decoration: none;
+            padding: 0;
+            transition: all .2s ease-in-out;
+            padding-bottom: .255em;
+        }
+        a:after {
+            width: 0;
+            display: block;
+            height: 3px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #000;
+            transition: width .8s ease;
+        }
+
+        a:hover:after {
+            content: ' ';
+            width: 100%;
+            left: 0;
+            background: #000;
+           
+        }
+
+    }
+
+    &_dropdown {
+
+        width: 100%;
+        height: 500px;
+        background-color: $complement-color;
+
+    }
+
+
+
+    &_drop-nav{
+        width: 50%;
+        margin: 0 auto;
     }
 
 }

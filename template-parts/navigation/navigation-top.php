@@ -28,7 +28,21 @@
 			'theme_location' => 'topbar',
 			'menu_id'        => 'top-menu',
 			'depth'          => 5,
-			'menu_classes'   => 'top-nav',
+			'menu_class'     => 'navigation_top-bar',
+			'walker'		 => new Topbar_Menu_Walker(),
+		) );
+		?>
+	</div>
+
+	<div class="navigation_dropdown isClosed">
+	<?php wp_nav_menu( array(
+			'menu'           => 'Dropdown',
+			'container'		 => 'navigation_dropdown',
+			'items_wrap'	 => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'theme_location' => 'primary',
+			'menu_id'        => 'drop-menu',
+			'depth'          => 5,
+			'menu_class'     => 'navigation_drop-nav',
 			'walker'		 => new Topbar_Menu_Walker(),
 		) );
 		?>
