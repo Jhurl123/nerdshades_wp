@@ -32,7 +32,7 @@ gulp.task('watch', function() {
         proxy: 'http://localhost/nerdshades-wp/',
         host: 'localhost/nerdshades-wp/',
         open: 'local',
-        files: ['*.html', '**/*.scss', '**/*.php', '**.*.js']
+        files: ['*.html', '**/*.scss', '**/*.php', '**/*.js']
     });
     gulp.watch('scss/**/*.scss', gulp.series('sass'));
 });

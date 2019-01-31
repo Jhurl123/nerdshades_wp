@@ -81,6 +81,8 @@ function ns_scripts() {
     wp_enqueue_style('ns_style', get_stylesheet_uri());
 
     //Scripts==============
+    wp_enqueue_script('ns-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true );
+    //wp_enqueue_script( 'ns-foundation-js', get_template_directory_uri() . '/node_modules/foundation-sites/dist/foundation.min.js', array('jquery'), '', true );
 
 }
 add_action('wp_enqueue_scripts', 'ns_scripts');
@@ -88,6 +90,6 @@ add_action('wp_enqueue_scripts', 'ns_scripts');
 class topbar_Menu_Walker extends Walker_Nav_Menu {
 	function start_lvl(&$output, $depth = 0, $args = Array() ) {
 		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul class=\"vertical menu\">\n";
+		$output .= "\n$indent<ul class=\"vertical dropdown menu\">\n";
 	}
 }

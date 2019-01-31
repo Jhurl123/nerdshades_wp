@@ -1,6 +1,6 @@
 <?php
-/*
-* Full height hero template part
+/* 
+* Full height Hero template part
 *
 */
 ?>

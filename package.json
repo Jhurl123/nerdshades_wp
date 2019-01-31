@@ -17,6 +17,7 @@
   "homepage": "https://github.com/Jhurl123/nerdshades_wp#readme",
   "devDependencies": {
     "browser-sync": "^2.26.3",
+    "foundation-sites": "^6.5.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-rename": "^1.4.0",
