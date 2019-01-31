@@ -5,7 +5,9 @@
   var sourcemaps  = require('gulp-sourcemaps');
   var browserSync = require('browser-sync').create();
 
-
+  proxy: {
+      target: "http:local"
+  }
 
 gulp.task('sass', function() {
     return gulp.src('scss/*.scss')
@@ -28,6 +30,8 @@ gulp.task('sass-watch', gulp.series('sass'), function (done) {
 gulp.task('watch', function() {
     browserSync.init({
         proxy: 'http://localhost/nerdshades-wp/',
+        host: 'localhost/nerdshades-wp/',
+        open: 'local',
         files: ['*.html', '**/*.scss', '**/*.php', '**.*.js']
     });
     gulp.watch('scss/**/*.scss', gulp.series('sass'));

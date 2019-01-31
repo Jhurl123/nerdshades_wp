@@ -26,9 +26,9 @@ function ns_theme_support() {
     //register nav menus here========================
     // This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'topbar' => esc_html__( 'Top Bar', 'aq' ),
-		'primary' => esc_html__( 'Primary', 'aq' ),
-		'mobile' => esc_html__( 'Mobile', 'aq' )
+		'topbar' => esc_html__( 'Top Bar', 'ns' ),
+		'primary' => esc_html__( 'Primary', 'ns' ),
+		'mobile' => esc_html__( 'Mobile', 'ns' )
 	) );
 
 }
@@ -85,4 +85,9 @@ function ns_scripts() {
 }
 add_action('wp_enqueue_scripts', 'ns_scripts');
 
-
+class topbar_Menu_Walker extends Walker_Nav_Menu {
+	function start_lvl(&$output, $depth = 0, $args = Array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"vertical menu\">\n";
+	}
+}

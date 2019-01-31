@@ -20,12 +20,19 @@
 
 	</a>
 	
-	<?php wp_nav_menu( array(
-		'theme_location' => 'topbar',
-		'menu_id'        => 'top-menu',
-		'menu_classes'   => 'top-nav'
-	) );
-	//implement walker when i get there ?>
+	<div class="menu-primary-container">
+		<?php wp_nav_menu( array(
+			'menu'           => 'Primary',
+			'container'		 => 'top-menu',
+			'items_wrap'	 => '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
+			'theme_location' => 'topbar',
+			'menu_id'        => 'top-menu',
+			'depth'          => 5,
+			'menu_classes'   => 'top-nav',
+			'walker'		 => new Topbar_Menu_Walker(),
+		) );
+		//implement walker when i get there ?>
+	</div>
 
 
 </nav><!-- #site-navigation -->

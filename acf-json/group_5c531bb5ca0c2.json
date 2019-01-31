@@ -1,0 +1,111 @@
+{
+    "key": "group_5c531bb5ca0c2",
+    "title": "Clone - Hero(full-height)",
+    "fields": [
+        {
+            "key": "field_5c531bc30bf88",
+            "label": "Hero Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "The main hero image to span the height of the page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5c531bef0bf89",
+            "label": "Hero Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "The main header to appear over the hero image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c531c430bf8a",
+            "label": "Hero Sub-title",
+            "name": "sub_title",
+            "type": "text",
+            "instructions": "The text to appear under the main title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c531c640bf8b",
+            "label": "Hero Text Position",
+            "name": "text_position",
+            "type": "radio",
+            "instructions": "Enter the position of the hero text, will add a css class based on selection",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "hero_text-left": "Left",
+                "hero_text-center": "Center",
+                "hero_text-right": "Right"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1548950772
+}
