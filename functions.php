@@ -22,6 +22,7 @@ function ns_theme_support() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
     add_theme_support( 'post-thumbnails' );
+    add_image_size('hero_full', 2000, 1000);
     
     //register nav menus here========================
     // This theme uses wp_nav_menu() in one location.
@@ -79,10 +80,13 @@ function ns_scripts() {
 
     //Styles===========
     wp_enqueue_style('ns_style', get_stylesheet_uri());
+    wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/css/slick.css');
+    wp_enqueue_style('slick-theme', get_template_directory_uri() . '/css/slick-theme.css');
     wp_enqueue_style('ns_style_icons', get_template_directory_uri() . '/node_modules/@fortawesome/fontawesome-free/css/all.css');
 
     //Scripts==============
     wp_enqueue_script('ns-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true );
+    wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true );
     //wp_enqueue_script( 'ns-foundation-js', get_template_directory_uri() . '/node_modules/foundation-sites/dist/foundation.min.js', array('jquery'), '', true );
 
 }
@@ -91,6 +95,6 @@ add_action('wp_enqueue_scripts', 'ns_scripts');
 class topbar_Menu_Walker extends Walker_Nav_Menu {
 	function start_lvl(&$output, $depth = 0, $args = Array() ) {
 		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul class=\"vertical dropdown menu\">\n";
+		$output .= "\n$indent<ul class=\"vertical clearfix navigation_drop-nav\">\n";
 	}
 }

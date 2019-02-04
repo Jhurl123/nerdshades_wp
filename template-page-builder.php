@@ -6,18 +6,29 @@
 get_header(); 
 ?>
 
-<?php 
+<?php
 
-    if(have_rows('page-builder')) : ?>
+    if(have_rows('page_builder')) : ?>
 
-        <?php while ( have_rows('page-builder') ): the_row(); 
+        <?php while ( have_rows('page_builder') ): the_row(); 
 
             $layout = get_row_layout();
 
             switch($layout) {
 
-                case 'hero_full_height':
-                    get_template_part('template-parts/hero-full-height.php');
+                case 'hero_slider':
+                    $toggle = get_sub_field('hero_size_toggle');
+
+                    if($toggle == 'full-height') {
+                        include get_template_directory() . '/template-parts/hero-full-height.php';
+                        break;
+                    }
+                    else {
+                        include get_template_directory() . '/template-parts/hero-half-height.php';
+                        break;
+                    }
+                
+                default:
                     break;
 
             }

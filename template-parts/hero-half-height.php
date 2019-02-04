@@ -1,6 +1,6 @@
 <?php
 /* 
-* Full height Hero template part
+* Half height Hero template part
 *
 */
 ?>
@@ -22,7 +22,7 @@
                     $sub_title = $slide['sub_title'];
                     $position  = $slide['text_position'];
                 ?>
-                <div class="slider_container">
+                
                 <div class="hero_img" style="background-image: url(<?php echo $image[0]; ?>);">
 
                     <div class="hero_row row">
@@ -43,7 +43,6 @@
                     </div>
 
                 </div>
-            </div>
 
             <?php endforeach; ?>
 

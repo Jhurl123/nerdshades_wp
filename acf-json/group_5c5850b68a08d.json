@@ -1,0 +1,148 @@
+{
+    "key": "group_5c5850b68a08d",
+    "title": "Clone - Hero Slider",
+    "fields": [
+        {
+            "key": "field_5c5851dc2ae0d",
+            "label": "Hero Size Toggle",
+            "name": "size_toggle",
+            "type": "radio",
+            "instructions": "Select the size that you would like the hero image to be",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "full-height": "Full-Height",
+                "half-height": "Half-Height"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c5851552ae0b",
+            "label": "Hero Slides(full-height)",
+            "name": "slides",
+            "type": "repeater",
+            "instructions": "Select the slides to appear within the home page slider",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c5851dc2ae0d",
+                        "operator": "==",
+                        "value": "full-height"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5c58517d2ae0c",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Hero Slide(Full Height)",
+            "sub_fields": [
+                {
+                    "key": "field_5c58517d2ae0c",
+                    "label": "Full Height Hero",
+                    "name": "full_slide",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5c531bb5ca0c2"
+                    ],
+                    "display": "seamless",
+                    "layout": "",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5c58529c2ae0e",
+            "label": "Hero Slides(half-height)",
+            "name": "slides",
+            "type": "repeater",
+            "instructions": "Select the slides to appear within the home page slider",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c5851dc2ae0d",
+                        "operator": "==",
+                        "value": "half-height"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5c58517d2ae0c",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Hero Slide(Half Height)",
+            "sub_fields": [
+                {
+                    "key": "field_5c58529c2ae0f",
+                    "label": "Half Height Hero",
+                    "name": "half_slide",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5c58537d92d94"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1549298823
+}

@@ -1,13 +1,13 @@
 {
-    "key": "group_5c531bb5ca0c2",
-    "title": "Clone - Hero(full-height)",
+    "key": "group_5c58537d92d94",
+    "title": "Clone - Hero(Half-height)",
     "fields": [
         {
-            "key": "field_5c531bc30bf88",
+            "key": "field_5c585399f32d3",
             "label": "Hero Image",
             "name": "image",
             "type": "image",
-            "instructions": "The main hero image to span the height of the page",
+            "instructions": "The main hero image to span half the height of the page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -27,11 +27,11 @@
             "mime_types": ""
         },
         {
-            "key": "field_5c531bef0bf89",
+            "key": "field_5c58577bf32d4",
             "label": "Hero Title",
             "name": "title",
             "type": "text",
-            "instructions": "The main header to appear over the hero image",
+            "instructions": "The main tag line to appear overlayed on hero image",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -46,7 +46,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5c531c430bf8a",
+            "key": "field_5c5857c2f32d5",
             "label": "Hero Sub-title",
             "name": "sub_title",
             "type": "text",
@@ -65,11 +65,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5c531c640bf8b",
+            "key": "field_5c58582ff32d6",
             "label": "Hero Text Position",
             "name": "text_position",
             "type": "radio",
-            "instructions": "Enter the position of the hero text, will add a css class based on selection",
+            "instructions": "The text-alignment  of the main title and sub title and button",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -107,5 +107,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1549295184
+    "modified": 1549294211
 }

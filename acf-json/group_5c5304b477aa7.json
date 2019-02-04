@@ -18,8 +18,8 @@
             "layouts": {
                 "5c5304ca5f74c": {
                     "key": "5c5304ca5f74c",
-                    "name": "hero_full_height",
-                    "label": "Hero (full-height)",
+                    "name": "hero_slider",
+                    "label": "Hero Slider",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -36,7 +36,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_5c531bb5ca0c2"
+                                "group_5c5850b68a08d"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -72,5 +72,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1548961773
+    "modified": 1549297356
 }
