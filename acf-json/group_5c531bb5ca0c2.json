@@ -88,6 +88,31 @@
             "layout": "vertical",
             "return_format": "value",
             "save_other_choice": 0
+        },
+        {
+            "key": "field_5c5891fa103e9",
+            "label": "Hero Text Color",
+            "name": "text_color",
+            "type": "radio",
+            "instructions": "Select the color you would like the hero text to be. Valid Hex Codes may also be entered",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "#f7f7f7": "White",
+                "#2db82d": "Green",
+                "#FFF": "Black"
+            },
+            "allow_null": 0,
+            "other_choice": 1,
+            "save_other_choice": 0,
+            "default_value": "#f7f7f7",
+            "layout": "horizontal",
+            "return_format": "value"
         }
     ],
     "location": [
@@ -107,5 +132,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1549295184
+    "modified": 1549308597
 }

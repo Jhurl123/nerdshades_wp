@@ -144,12 +144,20 @@ h1 {
   height: 100vh;
   width: 100%; }
   .hero_container .slick-dots {
-    bottom: 60px; }
+    bottom: 100px; }
+  .hero_container .slick-prev {
+    z-index: 1;
+    left: 35px; }
+  .hero_container .slick-next {
+    right: 50px; }
+  .hero_container .slick-prev:before, .hero_container .slick-next:before {
+    color: #2db82d; }
   .hero_container .slick-dots li button:before {
-    font-size: 12px;
+    font-size: 16px;
     color: #2db82d; }
   .hero_container .slick-dots li.slick-active button:before {
-    color: #2db82d; }
+    color: #2db82d;
+    opacity: .9; }
 
 .hero_img {
   height: 100%;
@@ -171,6 +179,9 @@ h1 {
 
 .slick-track {
   height: calc(100vh - 50px); }
+
+.hero_container-half {
+  height: 50vh; }
 
 /**
  * Foundation for Sites by ZURB
