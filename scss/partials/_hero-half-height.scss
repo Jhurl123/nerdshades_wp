@@ -1,6 +1,32 @@
 .hero {
 
     &_container-half {
-        height: 50vh;
+        height: 40vh;
+    }
+
+    &_title {
+        font-weight: 500;
+    }
+
+    &_button {
+        margin-top: 1rem;
+        padding: .45rem 1rem;
+        background-color: $green;
+        border: 2px $green solid;
+
+        a {
+            color: $black;
+        }
+    }
+
+    &_button:hover {
+        background-color: transparent;
+        border: 2px $green solid;
+
+        a {
+            color: $green;
+        }
     }
 }
+
+

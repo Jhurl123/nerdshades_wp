@@ -7,47 +7,44 @@
 
 <section class="hero_section">
 
-    <?php $slides = get_sub_field('hero_slides'); ?>
+    <div class="hero_container-half">
 
-    <?php if($slides) : ?>
+        <?php
+            $image_id  = get_sub_field('hero_image');
+            $image     = wp_get_attachment_image_src($image_id , 'hero_full');
+            $title     = get_sub_field('hero_title');
+            $sub_title = get_sub_field('hero_sub_title');
+            $position  = get_sub_field('hero_text_position');
+            $color     = get_sub_field('hero_color');
+            $button    = get_sub_field('hero_button');
+        ?>
+            
+        <div class="hero_img" style="background-image: url(<?php echo $image[0]; ?>);">
 
-        <div class="hero_container">
+            <div class="hero_row row">
 
-            <?php foreach( $slides as $slide) : ?>
+                <div class="hero_block columns large-12" style = "text-align:<?php echo $position; ?>; color: <?php echo $color; ?>">
 
-                <?php
-                    $image_id  = $slide['image'];
-                    $image     = wp_get_attachment_image_src($image_id , 'hero_full');
-                    $title     = $slide['title'];
-                    $sub_title = $slide['sub_title'];
-                    $position  = $slide['text_position'];
-                ?>
-                
-                <div class="hero_img" style="background-image: url(<?php echo $image[0]; ?>);">
+                    <?php if($title) :?>
+                        <h1 class="hero_title"><?php echo $title; ?></h1>
+                    <?php endif; ?>
 
-                    <div class="hero_row row">
+                    <?php if($sub_title) : ?>
+                        <h4 class="hero_sub-title"><?php echo $sub_title; ?></h4>
+                    <?php endif; ?>
 
-                        <div class="hero_block columns large-12" style = "text-align:<?php echo $position; ?>">
-
-                            <?php if($title) :?>
-                                <h1 class="hero_title"><?php echo $title; ?></h1>
-                            <?php endif; ?>
-
-                            <?php if($sub_title) : ?>
-                                <span class="hero_sub-title"><?php echo $sub_title; ?></span>
-                            <?php endif; ?>
-                                
-
-                        </div>
-
-                    </div>
-
+                    <?php if($button) : ?>
+                        <button class="hero_button">
+                            <a  href="<?= $button['url']; ?>"><?= $button['title']; ?></a>
+                        </button>
+                    <?php endif; ?>
+                        
                 </div>
 
-            <?php endforeach; ?>
+            </div>
 
         </div>
-    
-    <?php endif; ?>
+
+    </div>
 
 </section>

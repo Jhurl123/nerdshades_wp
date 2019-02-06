@@ -24,6 +24,8 @@
 
 .navigation {
 
+    position: relative;
+
     &_top-bar {
         float: left;
         margin-left: 1em;
@@ -77,21 +79,30 @@
     }
 
     &_drop-nav{
-        display: none;
         top: 100%;
+        display: none;
         right: auto;
+        width: 20vw;
         left: 0;
         background-color: $complement-color;
         transition-property: all;
 	    transition-duration: .5s;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        position: relative;
         margin-top: .6rem;
+        z-index: 1000;
 
         & .menu-item {
-            width: 150px;
+            width: 100%;
             padding: 1rem 0 .5rem 0;
             display: inline-block;
+            text-align: center;
 
+            a {
+                width: 100%;
+                color: $black;
+            }
+            
         }
 
         & .menu-item:last-child {
@@ -101,14 +112,25 @@
         a:hover {
             text-decoration: underline;
 
-        }
+        } 
+    }
+
+    &_login {
+        position: absolute;
+        padding: 0 1em;
+        right: 0;
+        top: 0;
+        height: 100%;
+        background-color: $black;
+        color: $base-color;
+        cursor: pointer;
     }
 
 }
 .is-open {
     bottom: 0;
-    width: 100%;
     display: block;
+    
 
     & .menu-item {
         display: block;
@@ -118,8 +140,7 @@
 
 }
 
-.is-closed {
-  
-    display: none;
+.is-active {
+    background-color: $complement-color;
 
 }

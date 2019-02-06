@@ -27,6 +27,10 @@ get_header();
                         include get_template_directory() . '/template-parts/hero-half-height.php';
                         break;
                     }
+
+                case "hero_half_height":
+                    include get_template_directory() . '/template-parts/hero-half-height.php';
+                    break;
                 
                 default:
                     break;

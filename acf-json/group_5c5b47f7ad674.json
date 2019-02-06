@@ -1,0 +1,49 @@
+{
+    "key": "group_5c5b47f7ad674",
+    "title": "Clone - Text Color",
+    "fields": [
+        {
+            "key": "field_5c5b47fd85372",
+            "label": "Color Selector",
+            "name": "color",
+            "type": "radio",
+            "instructions": "Select the color you would like the text to be. Valid hex Codes may also be used",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "#f7f7f7": "Base white Color",
+                "#FFF": "Black",
+                "#7CFC00": "Nerd Green"
+            },
+            "allow_null": 0,
+            "other_choice": 1,
+            "save_other_choice": 0,
+            "default_value": "#f7f7f7",
+            "layout": "vertical",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1549487610
+}

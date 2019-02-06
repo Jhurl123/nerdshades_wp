@@ -10,16 +10,16 @@ jQuery( document ).ready(function($) {
 
         topLevel.on('click', function(event) {
 
-            topLevel.css('background-color', '#dedede');
-
             let target = event.target;
 
            if(target.tagName === "A") {
                target = target.parentNode;
+               $(target).toggleClass('is-active');
+               dropNav = $(target).find('.navigation_drop-nav');
+               dropNav.toggleClass('is-open');
            }
 
-           dropNav = $(target).find('.navigation_drop-nav');
-           dropNav.toggleClass('is-open');
+
 
         });       
     }
