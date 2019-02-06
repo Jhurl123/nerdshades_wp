@@ -32,6 +32,10 @@ get_header();
                     include get_template_directory() . '/template-parts/hero-half-height.php';
                     break;
                 
+                case "content_band":
+                    include get_template_directory() . '/template-parts/content-band.php';
+                    break;
+
                 default:
                     break;
 
