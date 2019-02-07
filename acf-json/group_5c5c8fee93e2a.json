@@ -1,0 +1,53 @@
+{
+    "key": "group_5c5c8fee93e2a",
+    "title": "Clone - Sunglasses Selector",
+    "fields": [
+        {
+            "key": "field_5c5c9014945d1",
+            "label": "Product Selector",
+            "name": "product_selector",
+            "type": "relationship",
+            "instructions": "Pick the product to appear",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "sunglasses"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1549570219
+}

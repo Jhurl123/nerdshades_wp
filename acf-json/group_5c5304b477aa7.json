@@ -16,46 +16,15 @@
                 "id": ""
             },
             "layouts": {
-                "5c5304ca5f74c": {
-                    "key": "5c5304ca5f74c",
-                    "name": "hero_slider",
-                    "label": "Hero Slider",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5c53479d6686a",
-                            "label": "Hero",
-                            "name": "hero",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5c5850b68a08d"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5c5b42c297be8": {
-                    "key": "layout_5c5b42c297be8",
+                "5c5c92bd2e449": {
+                    "key": "5c5c92bd2e449",
                     "name": "hero_half_height",
-                    "label": "Hero (half-height)",
+                    "label": "Hero(half-height)",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5c5b42e097be9",
-                            "label": "Hero Image",
+                            "key": "field_5c5c92f188ddd",
+                            "label": "Hero Section",
                             "name": "hero",
                             "type": "clone",
                             "instructions": "",
@@ -78,14 +47,14 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_5c5b5e988a390": {
-                    "key": "layout_5c5b5e988a390",
+                "layout_5c5c935589d2b": {
+                    "key": "layout_5c5c935589d2b",
                     "name": "content_band",
                     "label": "Content Band",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5c5b5ea38a391",
+                            "key": "field_5c5c936789d2c",
                             "label": "Content Band",
                             "name": "content_band",
                             "type": "clone",
@@ -111,7 +80,7 @@
                 }
             },
             "button_label": "Add Row",
-            "min": 1,
+            "min": "",
             "max": ""
         }
     ],
@@ -134,5 +103,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1549491898
+    "modified": 1549570956
 }

@@ -126,9 +126,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Futura', 'sans-serif';
-  font-size: 1.25rem; }
-
-body {
+  font-size: 1.25rem;
   overflow-x: hidden; }
 
 a {
@@ -150,8 +148,10 @@ li {
 h1 {
   font-family: 'Futura', 'sans-serif'; }
 
+p {
+  line-height: 1.6; }
+
 .hero_section {
-  height: 100vh;
   width: 100vw; }
   .hero_section h1 {
     font-family: 'Futura', 'sans-serif'; }
@@ -209,7 +209,7 @@ h1 {
 
 .hero_button {
   margin-top: 1rem;
-  padding: .45rem 1rem;
+  padding: .6rem 1.25rem;
   background-color: #7CFC00;
   border: 2px #7CFC00 solid; }
   .hero_button a {
@@ -220,6 +220,16 @@ h1 {
   border: 2px #7CFC00 solid; }
   .hero_button:hover a {
     color: #7CFC00; }
+
+.content_band_container {
+  padding: 2.5rem 6rem;
+  text-align: center; }
+
+.content_band_headline {
+  margin: 0 0 1rem 0; }
+
+.content_band p {
+  font-size: 1.15rem; }
 
 /**
  * Foundation for Sites by ZURB

@@ -24,11 +24,11 @@
             "prefix_name": 0
         },
         {
-            "key": "field_5c5b5d88f3858",
-            "label": "Headline",
-            "name": "headline",
-            "type": "text",
-            "instructions": "The main headline to appear above the content",
+            "key": "field_5c5c438b86d05",
+            "label": "Text Color",
+            "name": "text_color",
+            "type": "clone",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,17 +36,40 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "clone": [
+                "group_5c5b47f7ad674"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5c5c940cd65b1",
+            "label": "Headline",
+            "name": "headline",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5c5c90e0b0291"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_5c5b5da2f3859",
             "label": "Content",
             "name": "content",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "The main body of content",
             "required": 0,
             "conditional_logic": 0,
@@ -56,14 +79,19 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
         [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
             {
                 "param": "post_type",
                 "operator": "==",
@@ -76,8 +104,21 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1549491855
+    "modified": 1549571102
 }

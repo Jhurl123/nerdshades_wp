@@ -1,0 +1,153 @@
+{
+    "key": "group_5c5c7a1f78fa2",
+    "title": "Sunglasses",
+    "fields": [
+        {
+            "key": "field_5c5c7a25d1e93",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "The main product description to be displayed under the product image?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 7,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5c5c7a74d1e94",
+            "label": "Price",
+            "name": "price",
+            "type": "number",
+            "instructions": "The price of the glasses(not including shipping of any sort)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": 0
+        },
+        {
+            "key": "field_5c5c8837d1e95",
+            "label": "Color",
+            "name": "color",
+            "type": "radio",
+            "instructions": "Check the color of the glasses",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [],
+            "allow_null": 0,
+            "other_choice": 1,
+            "save_other_choice": 1,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5c5c88c5d1e96",
+            "label": "Product Images",
+            "name": "images",
+            "type": "gallery",
+            "instructions": "Insert the images to appear for this specific model and color",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "insert": "append",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5c5c88f1d1e97",
+            "label": "Tags",
+            "name": "tags",
+            "type": "taxonomy",
+            "instructions": "The category that the glasses belong in",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "checkbox",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_5c5c891cd1e98",
+            "label": "Model Number",
+            "name": "model_number",
+            "type": "text",
+            "instructions": "The unique identifier for each model type, and color of that model",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "sunglasses"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1549568714
+}
