@@ -24,9 +24,8 @@ jQuery( document ).ready(function($) {
         });       
     }
 
-    $('.hero_container').slick({
-        adaptiveHeight: true,
-        arrows: true,
+    $('.product_cards_card_container').slick({
+      
         dots: true
     });
     

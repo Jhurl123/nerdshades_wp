@@ -151,6 +151,10 @@ h1 {
 p {
   line-height: 1.6; }
 
+a {
+  text-decoration: none;
+  color: #000; }
+
 .hero_section {
   width: 100vw; }
   .hero_section h1 {
@@ -202,7 +206,7 @@ p {
   height: calc(100vh - 50px); }
 
 .hero_container-half {
-  height: 40vh; }
+  height: 50vh; }
 
 .hero_title {
   font-weight: 500; }
@@ -230,6 +234,34 @@ p {
 
 .content_band p {
   font-size: 1.15rem; }
+
+.product_cards_section {
+  padding: 2.5rem 0; }
+
+.product_cards_headline {
+  text-align: center; }
+
+.product_cards_card_container {
+  padding: 2rem 0; }
+
+.product_cards_card {
+  background-color: #FFF;
+  padding: 3rem;
+  margin: 0 3rem;
+  box-shadow: 0 2px 21px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 5px; }
+
+.product_cards_card_title {
+  text-align: center; }
+
+.product_cards_card_price {
+  display: block;
+  width: 100%;
+  text-align: center; }
+
+.product_cards_image_container img {
+  display: block;
+  margin: 0 auto; }
 
 /**
  * Foundation for Sites by ZURB

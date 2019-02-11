@@ -36,6 +36,16 @@ get_header();
                     include get_template_directory() . '/template-parts/content-band.php';
                     break;
 
+                case "product_cards":
+                    $cards = array(
+                        'class'            => 'product_cards',
+                        'headline'         => get_sub_field('product_cards_headline'),
+                        'background_color' => get_sub_field('product_cards_background_color'),
+                        'cards'            => 'product_cards_cards'
+                    );
+                    include get_template_directory() . '/template-parts/product-cards.php';
+                    break;
+
                 default:
                     break;
 

@@ -23,6 +23,7 @@ function ns_theme_support() {
 	 */
     add_theme_support( 'post-thumbnails' );
     add_image_size('hero_full', 2000, 1000);
+    add_image_size('card_image', 200, 150);
     
     //register nav menus here========================
     // This theme uses wp_nav_menu() in one location.
@@ -80,13 +81,13 @@ function ns_scripts() {
 
     //Styles===========
     wp_enqueue_style('ns_style', get_stylesheet_uri());
-    wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/css/slick.css');
-    wp_enqueue_style('slick-theme', get_template_directory_uri() . '/css/slick-theme.css');
+    wp_register_style('slick', get_stylesheet_directory_uri() . '/css/slick.css');
+    wp_register_style('slick-theme', get_template_directory_uri() . '/css/slick-theme.css');
     wp_enqueue_style('ns_style_icons', get_template_directory_uri() . '/node_modules/@fortawesome/fontawesome-free/css/all.css');
 
     //Scripts==============
     wp_enqueue_script('ns-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true );
-    wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true );
+    wp_register_script('slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true );
     //wp_enqueue_script( 'ns-foundation-js', get_template_directory_uri() . '/node_modules/foundation-sites/dist/foundation.min.js', array('jquery'), '', true );
 
 }
