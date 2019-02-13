@@ -1,0 +1,143 @@
+{
+    "key": "group_5c633d97807ae",
+    "title": "Clone - Slide Pieces",
+    "fields": [
+        {
+            "key": "field_5c6343d3311f9",
+            "label": "Slides",
+            "name": "slide",
+            "type": "repeater",
+            "instructions": "Enter the slides to appear here(Max 4 rows)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 4,
+            "layout": "block",
+            "button_label": "Add Slide",
+            "sub_fields": [
+                {
+                    "key": "field_5c633ec731d47",
+                    "label": "Slide Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "The image to appear as the background of the slide.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "large",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5c64272293b8f",
+                    "label": "Position Toggle",
+                    "name": "toggle",
+                    "type": "true_false",
+                    "instructions": "Determine which side you would like the text and button to appear on",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Left",
+                    "ui_off_text": "Right"
+                },
+                {
+                    "key": "field_5c6427a77e5ac",
+                    "label": "Text Color",
+                    "name": "text_color",
+                    "type": "clone",
+                    "instructions": "Choose the text color to appear in this slide piece",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5c5b47f7ad674"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_5c633fe231d48",
+                    "label": "Headline",
+                    "name": "headline",
+                    "type": "text",
+                    "instructions": "The line of text that is prepended to the button",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c63403731d49",
+                    "label": "Button",
+                    "name": "button",
+                    "type": "link",
+                    "instructions": "The button that leads to another page of the website",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1550067847
+}

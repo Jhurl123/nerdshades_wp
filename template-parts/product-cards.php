@@ -1,5 +1,6 @@
 <?php
  wp_enqueue_style('slick');
+ wp_enqueue_style('slick-theme');
  wp_enqueue_script('slick');
 /*
 $cards = array(
@@ -20,73 +21,77 @@ $cards = array(
             </h2>   
         <?php endif; ?>
 
-        <?php if(have_rows($cards['cards'])) : ?>
-            <?php while(have_rows($cards['cards'])) : the_row(); ?>
-                <?php
-                    $posts = get_sub_field('product');
-                ?>
+</div>
+        <div class="<?= $cards['class'] . '_card_row'; ?> row">
+            <?php if(have_rows($cards['cards'])) : ?>
+                <?php while(have_rows($cards['cards'])) : the_row(); ?>
+                    <?php
+                        $posts = get_sub_field('product');
+                    ?>
 
-                <?php if($posts ): ?>
-                    <?php foreach($posts as $p) : ?>
-                        <?php 
-                            $title        = get_the_title($p->ID);
-                            $price        = get_field('price', $p->ID);
-                            $color        = get_field('color', $p->ID);
-                            $images       = get_field('images', $p->ID);
-                            $tags         = get_field('tags', $p->ID);
-                            $model        = get_field('model_number', $p->ID);
-                            $link         = get_the_permalink($p->ID);
-                        ?>
+                    <?php if($posts ): ?>
+                        <?php foreach($posts as $p) : ?>
+                            <?php 
+                                $title        = get_the_title($p->ID);
+                                $price        = get_field('price', $p->ID);
+                                $color        = get_field('color', $p->ID);
+                                $images       = get_field('images', $p->ID);
+                                $tags         = get_field('tags', $p->ID);
+                                $model        = get_field('model_number', $p->ID);
+                                $link         = get_the_permalink($p->ID);
+                               
+                                $thumbnail      = wp_get_attachment_image_src($images[0]['ID'], 'card_image');
+                                $hoverThumbnail = wp_get_attachment_image_src($images[1]['ID'], 'card_image');
+                        
+                            ?>
 
                         
+                                <div class="<?= $cards['class'] . '_card_container'; ?>">
+                                    <a href="<?= $link; ?>">
 
-                            <div class="<?= $cards['class'] . '_card_container'; ?> columns large-4 medium-6 small-12">
-                                <a href="<?= $link; ?>">
+                                        <div class="<?= $cards['class'] . '_card'; ?>">
 
-                                    <div class="<?= $cards['class'] . '_card'; ?>">
+                                            <?php if($images) : ?>
 
-                                        <div class="<?= $cards['class'] . '_card_header'; ?>">
-                                            
-                                            <?php if($title) : ?>
-                                                <h4 class="<?= $cards['class'] . '_card_title'; ?>">
-                                                    <?= $title; ?>
-                                                </h4>   
-                                            <?php endif; ?>
-
-                                        </div>
-
-                                        <?php if($images) : ?>
-                                            <?php foreach($images as $image) :?>
-
-                                                <?php 
-                                                    $thumbnail = wp_get_attachment_image($image['ID'], 'card_image');
-                                                ?>
                                                 <div class="<?= $cards['class'] . '_image_container'; ?>">
 
-                                                <?= $thumbnail; ?>
+                                                    <img src="<?= $thumbnail[0]; ?>" width="<?= $thumbnail[1]; ?>" height="<?= $thumbnail; ?>" data-alt-src="<?= $hoverThumbnail[0]; ?>"/>
 
                                                 </div>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
 
-                                        <?php if($price) : ?>
-                                            <span class="<?= $cards['class'] . '_card_price'; ?>">
-                                                <?= $price; ?>
-                                            </span> 
-                                        <?php endif;?>
+                                                <div class="<?= $cards['class'] . '_card_header'; ?>">
+                                            
+                                                    <?php if($title) : ?>
+                                                        <h4 class="<?= $cards['class'] . '_card_title'; ?>">
+                                                            <?= $title; ?>
+                                                        </h4>   
+                                                    <?php endif; ?>
 
-                                    </div>
-                                </a>
+                                                </div>
+                                        
+                                            <?php endif; ?>
 
-                            </div>
+                                            <?php if($price) : ?>
+                                                <span class="<?= $cards['class'] . '_card_price'; ?>">
+                                                    <?= '$' .$price; ?>
+                                                </span> 
+                                            <?php endif;?>
 
-                        <?php endforeach; ?>
+                                        </div>
+                                    </a>
 
-                    <?php endif; ?>
+                                </div>
+                        
 
-                <?php endwhile; ?>
+                            <?php endforeach; ?>
 
-            <?php endif; ?>
+                        <?php endif; ?>
+
+                    <?php endwhile; ?>
+
+                <?php endif; ?>
+
+            </div>
 
         </div>
 

@@ -2,28 +2,40 @@
 
 
     &_section {
+
         padding: 2.5rem 0;
+
+        .slick-dots li button:before {
+            font-size: 11px;
+            color: $green;
+        }
+
+        .slick-dots li.slick-active button:before {
+            color: $green;
+            opacity: 1;
+        }
+
     }
 
     &_headline {
         text-align: center;
-    }
-
-  
-
-    &_card_container {
-        padding: 2rem 0;
+        padding-bottom: 2.5rem;
     }
     
+    &_card_container {
+        padding: 1rem;
+    }
+
     &_card {
+        width: 100%;
         background-color: #FFF;
-        padding: 3rem;
-        margin: 0 3rem;
+        padding: 2.5rem 2rem 4.5rem 2rem;
         box-shadow: 0 2px 21px 0 rgba(0,0,0,.05);
         border-radius: 5px;
     }
     
     &_card_title {
+        padding-bottom: 2rem;
         text-align:center;
     }
 
@@ -39,7 +51,7 @@
             display: block;
             margin: 0 auto;
         }
-    }
 
+    }
 
 }

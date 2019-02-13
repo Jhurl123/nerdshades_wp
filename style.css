@@ -16,7 +16,8 @@ Tags:
 .main-navigation {
   width: 100%;
   background-color: #f7f7f7;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
   .main-navigation_logo_image {
     height: 50px;
     margin: 0 1rem; }
@@ -27,8 +28,7 @@ Tags:
     position: absolute;
     top: 50%;
     left: 30%;
-    transform: translate(-50%, -50%);
-    padding-top: .5em; }
+    transform: translate(-50%, -50%); }
 
 .navigation {
   position: relative; }
@@ -44,6 +44,7 @@ Tags:
       display: block;
       width: 25%;
       height: 100%;
+      padding-top: .5rem;
       text-align: center; }
     .navigation_top-bar > li > a {
       position: relative;
@@ -70,7 +71,6 @@ Tags:
     .navigation_top-bar .menu-item .active-link {
       background-color: #dedede; }
   .navigation_drop-nav {
-    top: 100%;
     display: none;
     right: auto;
     width: 20vw;
@@ -84,7 +84,7 @@ Tags:
     z-index: 1000; }
     .navigation_drop-nav .menu-item {
       width: 100%;
-      padding: 1rem 0 .5rem 0;
+      padding: 1rem 0 .5rem 1rem;
       display: inline-block;
       text-align: center; }
       .navigation_drop-nav .menu-item a {
@@ -114,6 +114,51 @@ Tags:
 
 .is-active {
   background-color: #dedede; }
+
+@media only screen and (max-width: 1000px) {
+  .main-navigation .menu-primary-container {
+    width: 100%;
+    left: 50%; }
+  .navigation_top-bar {
+    margin-left: 3em; }
+  .navigation_top-bar .menu-item {
+    width: 20%; } }
+
+@media only screen and (max-width: 768px) {
+  nav ul {
+    display: none; }
+  .navigation_login {
+    display: none; }
+  #nav-toggle {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    cursor: pointer;
+    padding: 2px 35px 16px 0px; }
+    #nav-toggle span,
+    #nav-toggle span:before,
+    #nav-toggle span:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 5px;
+      width: 35px;
+      background: #000;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all 300ms ease-in-out; }
+    #nav-toggle span:before {
+      top: -10px; }
+    #nav-toggle span:after {
+      bottom: -10px; }
+    #nav-toggle.active span {
+      background-color: transparent; }
+      #nav-toggle.active span:before, #nav-toggle.active span:after {
+        top: 0; }
+      #nav-toggle.active span:before {
+        transform: rotate(45deg); }
+      #nav-toggle.active span:after {
+        transform: rotate(-45deg); } }
 
 *,
 *:before,
@@ -202,9 +247,6 @@ a {
 .hero_sub-title {
   margin-bottom: .5rem; }
 
-.slick-track {
-  height: calc(100vh - 50px); }
-
 .hero_container-half {
   height: 50vh; }
 
@@ -237,21 +279,29 @@ a {
 
 .product_cards_section {
   padding: 2.5rem 0; }
+  .product_cards_section .slick-dots li button:before {
+    font-size: 11px;
+    color: #7CFC00; }
+  .product_cards_section .slick-dots li.slick-active button:before {
+    color: #7CFC00;
+    opacity: 1; }
 
 .product_cards_headline {
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 2.5rem; }
 
 .product_cards_card_container {
-  padding: 2rem 0; }
+  padding: 1rem; }
 
 .product_cards_card {
+  width: 100%;
   background-color: #FFF;
-  padding: 3rem;
-  margin: 0 3rem;
+  padding: 2.5rem 2rem 4.5rem 2rem;
   box-shadow: 0 2px 21px 0 rgba(0, 0, 0, 0.05);
   border-radius: 5px; }
 
 .product_cards_card_title {
+  padding-bottom: 2rem;
   text-align: center; }
 
 .product_cards_card_price {
@@ -262,6 +312,46 @@ a {
 .product_cards_image_container img {
   display: block;
   margin: 0 auto; }
+
+.slide_pieces_slide {
+  max-height: 25vh;
+  display: none;
+  height: 20vh;
+  width: 100vw;
+  margin-bottom: .25rem;
+  background-clip: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slide 0.5s  forwards; }
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0; } }
+
+@keyframes slide {
+  100% {
+    left: 0; } }
+  .slide_pieces_slide_container {
+    font-family: 'Futura', 'sans-serif';
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%; }
+
+.slide_pieces_headline {
+  font-size: 2.4rem;
+  padding-left: 10rem;
+  letter-spacing: 2px; }
+
+.slide_pieces_button {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  padding: .25rem 1.3rem; }
+  .slide_pieces_button:hover {
+    color: red;
+    -webkit-background-clip: text;
+    background-color: inherit; }
 
 /**
  * Foundation for Sites by ZURB

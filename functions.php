@@ -23,7 +23,7 @@ function ns_theme_support() {
 	 */
     add_theme_support( 'post-thumbnails' );
     add_image_size('hero_full', 2000, 1000);
-    add_image_size('card_image', 200, 150);
+    add_image_size('card_image', 250, 200);
     
     //register nav menus here========================
     // This theme uses wp_nav_menu() in one location.

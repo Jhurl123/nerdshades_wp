@@ -35,4 +35,5 @@
 	</div>
 	
 	<button class="navigation_login"> Log In</button>
+	<a id="nav-toggle" href="#"><span></span></a>
 </nav><!-- #site-navigation -->

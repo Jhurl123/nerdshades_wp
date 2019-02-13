@@ -55,7 +55,10 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "Nerd Shades Green": "Nerd Shades Green",
+                "Dirt Brown": "Dirt Brown"
+            },
             "allow_null": 0,
             "other_choice": 1,
             "save_other_choice": 1,
@@ -68,7 +71,7 @@
             "label": "Product Images",
             "name": "images",
             "type": "gallery",
-            "instructions": "Insert the images to appear for this specific model and color",
+            "instructions": "Insert the images to appear for this specific model and color. The first two images appear on the product cards section",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -149,5 +152,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1549568714
+    "modified": 1549999880
 }

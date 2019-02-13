@@ -46,6 +46,14 @@ get_header();
                     include get_template_directory() . '/template-parts/product-cards.php';
                     break;
 
+                case "slide_pieces":
+                    $slides = array(
+                        'class'     => 'slide_pieces',
+                        'slides'    => 'slides_slide'
+                    );
+                    include get_template_directory() . '/template-parts/slide-pieces.php';
+                    break;
+
                 default:
                     break;
 
