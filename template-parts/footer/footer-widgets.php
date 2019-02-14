@@ -10,18 +10,21 @@
 
 ?>
 
-<?php
-if ( is_active_sidebar( 'sidebar-2' ) ||
-	 is_active_sidebar( 'sidebar-3' ) ) :
-?>
+	<aside class="widget-area" role="complementary" >
+		<?php	wp_nav_menu( array(
+					'menu'           => 'footer',
+					'container'		 => 'footer-container',
+					'items_wrap'	 => '<ul id="%1$s" footer-list class="%2$s">%3$s</ul>',
+					'theme_location' => 'footer',
+					'menu_id'        => 'none',
+					'depth'          => 5,
+					'menu_class'     => 'footer-menu accordion-menu',
+					'walker'		 => new Topbar_Menu_Walker(),
+				) );
+		?>
 
-	<aside class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'twentyseventeen' ); ?>">
-		<?php
-		if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
-			<div class="widget-column footer-widget-1">
-				<?php dynamic_sidebar( 'sidebar-2' ); ?>
 			</div>
-		<?php }
+		<?php 
 		if ( is_active_sidebar( 'sidebar-3' ) ) { ?>
 			<div class="widget-column footer-widget-2">
 				<?php dynamic_sidebar( 'sidebar-3' ); ?>
@@ -29,4 +32,4 @@ if ( is_active_sidebar( 'sidebar-2' ) ||
 		<?php } ?>
 	</aside><!-- .widget-area -->
 
-<?php endif; ?>
+

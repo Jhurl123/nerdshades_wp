@@ -78,6 +78,7 @@ jQuery( document ).ready(function($) {
         ]
 
     });
+    
 
     function buttonHoverHelper()  {
         var button = $('.slide_pieces_button');
@@ -159,25 +160,50 @@ jQuery( document ).ready(function($) {
 
     var Slides = slide_pieces_init();
     scrollListener(Slides);
+    
+
+    function windowPosLoad() {
+        loadPosition = window.scrollY;
+        return loadPosition;
+    }
+
+    function windowSize(windowHeight) {
+        var windowHeight = window.outerHeight;
+        return windowHeight;
+    }
 
     function scrollListener(Slides) {
 
-        var windowHeight = window.outerHeight;
+        window.addEventListener('resize', function() {
+           windowSize(window.outerHeight);
+        });
+        window.addEventListener('load', function() {
+           
+            var startPosition = windowPosLoad();
+            var windowHeight = windowSize();
+            for(var i = 0; i < Slides.length; i++) {
+            if((startPosition +windowHeight) >= Slides[0].height) {
+                Slides[i].slide();
+            } 
+        }
+        });
 
         window.addEventListener('scroll', function() {
+            
+            var piecesSection = document.querySelector('.slide_pieces_section').offsetTop;
+            var scrollHeight = window.scrollY;
+            var windowHeight = windowSize();
+            windowHeight = windowHeight + scrollHeight;
+            let scrollPadding = 20;
 
-            scrollHeight = window.scrollY;
-
-            switchHeight = scrollHeight + windowHeight;
+           console.log(windowHeight);
 
             for(var i = 0; i < Slides.length; i++) {
-
-                if(switchHeight >= Slides[i].height) {
-
+                //console.log(Slides[i].height);
+                if(windowHeight >= (Slides[i].height)) {
                     Slides[i].slide();
-
                 }
-                else {
+               else if(windowHeight < piecesSection){
                     Slides[i].destroy();
                 }
             }
@@ -186,5 +212,4 @@ jQuery( document ).ready(function($) {
 
     }
     
-
 })();

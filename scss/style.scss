@@ -9,17 +9,9 @@ Text Domain: nerd shades
 Tags:
 */
 
-@import 'partials/variables';
-@import 'partials/navigation';
-@import 'partials/global';
-@import 'partials/hero-full-height';
-@import 'partials/hero-half-height';
-@import 'partials/content-band';
-@import 'partials/product-cards';
-@import 'partials/slide-pieces';
-
 //foundation styles
 @import '../node_modules/foundation-sites/scss/foundation';
+@import '../node_modules/foundation-sites/scss/util/breakpoint';
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-flex-grid;
@@ -51,9 +43,12 @@ Tags:
 @include foundation-float-classes;
 
 
-
-
-
-
-
-
+@import 'partials/variables';
+@import 'partials/navigation';
+@import 'partials/global';
+@import 'partials/hero-full-height';
+@import 'partials/hero-half-height';
+@import 'partials/content-band';
+@import 'partials/product-cards';
+@import 'partials/slide-pieces';
+@import 'partials/footer';

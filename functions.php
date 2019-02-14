@@ -30,7 +30,8 @@ function ns_theme_support() {
 	register_nav_menus( array(
 		'topbar' => esc_html__( 'Top Bar', 'ns' ),
 		'primary' => esc_html__( 'Primary', 'ns' ),
-		'mobile' => esc_html__( 'Mobile', 'ns' )
+        'mobile' => esc_html__( 'Mobile', 'ns' ),
+        'footer' => esc_html__('Footer', 'ns'),
 	) );
 
 }
@@ -99,3 +100,4 @@ class topbar_Menu_Walker extends Walker_Nav_Menu {
 		$output .= "\n$indent<ul class=\"vertical clearfix navigation_drop-nav\">\n";
 	}
 }
+
