@@ -4,7 +4,6 @@
     &_slide {
     
         max-height: 25vh;
-        display: none;
         height: 20vh;
         width: 100vw;
         margin-bottom: .25rem;
@@ -12,14 +11,23 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        animation: slide 0.5s  forwards;
-
-        @-webkit-keyframes slide {
-            100% { left: 0; }
+        position: relative;
+        transition: 2s;
+       
+        &.left {
+            left: -100vw;
         }
-        
-        @keyframes slide {
-            100% { left: 0; }
+
+        &.left-open {
+            left: 0;
+        }
+
+        &.right {
+            right: -100vw;
+        }
+
+        &.right-open {
+            right: 0;
         }
 
         &_container {
@@ -51,6 +59,5 @@
         }
     }
 
-    
 }
 

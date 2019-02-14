@@ -315,7 +315,6 @@ a {
 
 .slide_pieces_slide {
   max-height: 25vh;
-  display: none;
   height: 20vh;
   width: 100vw;
   margin-bottom: .25rem;
@@ -323,15 +322,16 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  animation: slide 0.5s  forwards; }
-
-@-webkit-keyframes slide {
-  100% {
-    left: 0; } }
-
-@keyframes slide {
-  100% {
-    left: 0; } }
+  position: relative;
+  transition: 2s; }
+  .slide_pieces_slide.left {
+    left: -100vw; }
+  .slide_pieces_slide.left-open {
+    left: 0; }
+  .slide_pieces_slide.right {
+    right: -100vw; }
+  .slide_pieces_slide.right-open {
+    right: 0; }
   .slide_pieces_slide_container {
     font-family: 'Futura', 'sans-serif';
     display: flex;

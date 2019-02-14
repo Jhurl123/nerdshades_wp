@@ -109,13 +109,27 @@ jQuery( document ).ready(function($) {
            
     }
 
-
     Slide_piece.prototype = {
         //Prototype method that will handle the actual sliding of the pieces
         slide: function() {
 
-            this.element.style.display = "block";
+            if(this.element.classList.contains('left')) {
 
+                this.element.classList.add('left-open');
+            }
+            else {
+                this.element.classList.add('right-open');
+            }
+
+        },
+
+        destroy: function() {
+            if( this.element.classList.contains('left-open')) {
+                this.element.classList.remove('left-open');
+            }
+            else if (this.element.classList.contains('right-open')) {
+                this.element.classList.remove('right-open');
+            }
         }
     };
 
@@ -123,9 +137,20 @@ jQuery( document ).ready(function($) {
        
         var pieces = document.querySelectorAll('.slide_pieces_slide');
             pieces = Array.prototype.slice.call(pieces);
-            console.log(pieces[0].offsetTop);
             
             var slides = pieces.map((slide, idx, array) => {
+    
+                //applying classes to every other slide
+                idx = idx+1;
+
+                if(idx % 2) {
+                    slide.classList.add('left');
+                }
+                else {
+                    slide.classList.add('right');
+                }
+                idx = idx-1;
+
                 height = slide.offsetTop;
                 return new Slide_piece(slide, height, idx);
             });
@@ -133,24 +158,27 @@ jQuery( document ).ready(function($) {
     }
 
     var Slides = slide_pieces_init();
-
     scrollListener(Slides);
-
 
     function scrollListener(Slides) {
 
-        var sectionHeight = document.querySelector('.slide_pieces_section').offsetTop;
         var windowHeight = window.outerHeight;
+
         window.addEventListener('scroll', function() {
+
             scrollHeight = window.scrollY;
-            console.log(Slides);
+
             switchHeight = scrollHeight + windowHeight;
-            console.log(switchHeight);
+
             for(var i = 0; i < Slides.length; i++) {
 
                 if(switchHeight >= Slides[i].height) {
-                    console.log("meao");
+
                     Slides[i].slide();
+
+                }
+                else {
+                    Slides[i].destroy();
                 }
             }
 
