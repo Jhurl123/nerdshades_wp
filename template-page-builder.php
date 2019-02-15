@@ -54,6 +54,16 @@ get_header();
                     include get_template_directory() . '/template-parts/slide-pieces.php';
                     break;
 
+                case 'tile_row':
+                    $tiles = array( 
+                        'class'  => 'tile-row',
+                        'image'  => get_sub_field('image'),
+                        'title'  => get_sub_field('title'),
+                        'link'   => get_sub_field('link')
+                    );
+                    include get_template_directory() . '/template-parts/tile-row.php';
+                    break;
+                    
                 default:
                     break;
 

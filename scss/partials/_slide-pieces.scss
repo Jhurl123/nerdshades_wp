@@ -1,6 +1,6 @@
 .slide_pieces {
     
-
+    position: relative;
     &_slide {
     
         max-height: 25vh;
@@ -13,6 +13,7 @@
         background-repeat: no-repeat;
         position: relative;
         transition: 2s;
+        
        
         &.left {
             left: -100vw;

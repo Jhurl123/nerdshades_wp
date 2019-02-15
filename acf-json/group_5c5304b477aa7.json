@@ -139,6 +139,37 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5c66fd8100d43": {
+                    "key": "layout_5c66fd8100d43",
+                    "name": "tile_row",
+                    "label": "Tile Row",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5c66fd8d00d44",
+                            "label": "Tile Row",
+                            "name": "tile_row",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5c66f968ae7cb"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -165,5 +196,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1550009556
+    "modified": 1550253485
 }

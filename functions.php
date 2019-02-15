@@ -31,17 +31,54 @@ function ns_theme_support() {
 		'topbar' => esc_html__( 'Top Bar', 'ns' ),
 		'primary' => esc_html__( 'Primary', 'ns' ),
         'mobile' => esc_html__( 'Mobile', 'ns' ),
-        'footer' => esc_html__('Footer', 'ns'),
+        'footer_1' => esc_html__('Footer Left', 'ns'),
+        'footer_2' => esc_html__('Footer Middle', 'ns'),
+        'footer_3' => esc_html__('Footer Right', 'ns')
 	) );
 
 }
 add_action('after_setup_theme', 'ns_theme_support');
 
+function ns_menu_classes($classes, $item, $args) {
+
+    if($args->theme_location == 'footer_1') {
+      $classes[] = 'footer-1-list';
+    }
+    return $classes;
+  }
+  add_filter('nav_menu_css_class', 'ns_menu_classes', 1, 3);
+
 function ns_init() {
     //adds the options page to wordpress backend
     acf_add_options_page('Site Settings');
+
+    register_sidebar( array(
+        'name' => 'Footer Menu 1',
+        'id'   => 'footer_menu_1',
+        'theme_location' => 'footer_1',
+        'before_widget' => '<ul class="footer_menu-1">',
+        'after_widget'  => '</ul>',
+        'before_title'  => '<h3 class="footer_menu_title">',
+        'after_title'   => '</h3>'
+    ));
+    register_sidebar( array(
+        'name' => 'Footer Menu 2',
+        'id'   => 'footer_menu_2',
+        'before_widget' => '<ul class="footer_menu-2">',
+        'after_widget'  => '</ul>',
+        'before_title'  => '<h3 class="footer_menu_title">',
+        'after_title'   => '</h3>'
+    ));
+    register_sidebar( array(
+        'name' => 'Footer Menu 3',
+        'id'   => 'footer_menu_3',
+        'before_widget' => '<ul class="footer_menu-3">',
+        'after_widget'  => '</ul>',
+        'before_title'  => '<h3 class="footer_menu_title">',
+        'after_title'   => '</h3>'
+    ));
 }
-add_action('init', 'ns_init');
+add_action('widgets_init', 'ns_init');
 
 function ns_custom_post_types() {
 
@@ -100,4 +137,13 @@ class topbar_Menu_Walker extends Walker_Nav_Menu {
 		$output .= "\n$indent<ul class=\"vertical clearfix navigation_drop-nav\">\n";
 	}
 }
+
+class footer_Menu_Walker extends Walker_Nav_Menu {
+	function start_lvl(&$output, $depth = 0, $args = Array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"vertical clearfix navigation_drop-nav\">\n";
+	}
+}
+
+
 

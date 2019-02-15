@@ -9,27 +9,25 @@
  */
 
 ?>
-
-	<aside class="widget-area" role="complementary" >
-		<?php	wp_nav_menu( array(
-					'menu'           => 'footer',
-					'container'		 => 'footer-container',
-					'items_wrap'	 => '<ul id="%1$s" footer-list class="%2$s">%3$s</ul>',
-					'theme_location' => 'footer',
-					'menu_id'        => 'none',
-					'depth'          => 5,
-					'menu_class'     => 'footer-menu accordion-menu',
-					'walker'		 => new Topbar_Menu_Walker(),
-				) );
-		?>
-
+<div class="row">
+	<div class="widgets_container columns large-12 align-center">
+		<?php if ( is_active_sidebar( 'footer_menu_1' ) ) : ?>
+			<div class="widget-column footer-widget-1">
+				<?php dynamic_sidebar( 'footer_menu_1' ); ?>
 			</div>
-		<?php 
-		if ( is_active_sidebar( 'sidebar-3' ) ) { ?>
+		<?php endif; ?>
+
+		<?php if ( is_active_sidebar( 'footer_menu_2' ) ) : ?>
 			<div class="widget-column footer-widget-2">
-				<?php dynamic_sidebar( 'sidebar-3' ); ?>
+				<?php dynamic_sidebar( 'footer_menu_2' ); ?>
 			</div>
-		<?php } ?>
-	</aside><!-- .widget-area -->
+		<?php endif;?>
 
+		<?php if ( is_active_sidebar( 'footer_menu_3' ) ) : ?>
+			<div class="widget-column footer-widget-3">
+				<?php dynamic_sidebar( 'footer_menu_3' ); ?>
+			</div>
+		<?php endif; ?>
+	</div>
+</div>
 

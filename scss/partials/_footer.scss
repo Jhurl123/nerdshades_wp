@@ -1,3 +1,36 @@
-.footer {
+.site-footer {
+    padding: 5rem 0;
+    background: $black;
+    color: $base-color;
+
+    .menu {
+        display: block;
+        text-align: left;
+        
+
+        a {
+            padding-left: 0;
+            font-size: 1rem;
+            color: $base-color;
+        }
+    }
     
+}
+
+.widgets_container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.widget-column {
+    float: left;
+    margin-right: 5em;
+
+}
+.footer_menu_title {
+    text-align: left;
+    font-size: 1.25rem;
+    margin-bottom:  1.25rem;
 }

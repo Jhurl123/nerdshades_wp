@@ -52,12 +52,12 @@
     }
 
     &_row {
-        height: 50%;
+        height: 100%;
+        align-items: center;
     }
 
     &_block {
         color: $main-text;
-        margin-top: 2rem;
     }
 
     &_title {

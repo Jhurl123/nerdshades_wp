@@ -36,7 +36,6 @@ jQuery( document ).ready(function($) {
         function() {
             var cardImage = $(this).find('img');
                 cardSrc   = cardImage.attr('src');
-
                 hoverSrc  = cardImage.data('alt-src');
                 cardImage.attr('src', hoverSrc);
                 cardImage.data('alt-src', cardSrc);
@@ -48,6 +47,7 @@ jQuery( document ).ready(function($) {
         $('#nav-toggle').on('click', function() {
             $(this).toggleClass('active');
         });
+
     }
 
     $('.product_cards_card_row').slick({
@@ -194,12 +194,9 @@ jQuery( document ).ready(function($) {
             var scrollHeight = window.scrollY;
             var windowHeight = windowSize();
             windowHeight = windowHeight + scrollHeight;
-            let scrollPadding = 20;
-
-           console.log(windowHeight);
 
             for(var i = 0; i < Slides.length; i++) {
-                //console.log(Slides[i].height);
+            
                 if(windowHeight >= (Slides[i].height)) {
                     Slides[i].slide();
                 }
