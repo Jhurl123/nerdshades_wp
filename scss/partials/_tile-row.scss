@@ -1,33 +1,72 @@
 .tile-row {
 
-    &_container {
-        display: flex;
-        flex-direction: row;
+    &_tile_container {
+        width: 33.3333%;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
 
+        @include breakpoint(medium down) {
+            width: 100%;
+            height: 35vh;
+        }
+        
+    }
+
+    &_container {
+        
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        flex-direction: row;
+        height: 35vh;
+
+        @include breakpoint(medium down) {
+            height: auto;
+        }
     }
 
     &_link {
-        width: 33.3333%;
         overflow: hidden;
-
+        flex-grow: 1;
         .tile-row {
             &_text_container {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 3rem;
+                position: relative;
             }
 
             &_tile {
                 display: flex;
-                height: 35vh;
+                height: 100%;
+                position: relative;
+                width: 100%;
                 align-items: flex-end;
-                background-position: center;
-                background-size:100%;
                 overflow: hidden;
-                transition: background-size .4s linear;
-               
-                &:hover {
-                    background-size: 115%;
+                transition: all .4s linear;
+                background-size: cover;
+                background-position: center;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: inherit;
+                    transition: inherit;
+                }
+
+
+                @include breakpoint(medium up) {
+
+                    &:hover:before {
+                        transform: scale(1.2);
+                    }
+
                 }
 
             }
@@ -38,18 +77,36 @@
             }
 
             &_sub_title {
-                text-align: center;
+               
+                max-height: 48px;
                 color: $base-color;
+                overflow: hidden;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 17px !important;
+                transition: .5s all ease-in-out;
+                position: relative;
+                left: -14px;
+                letter-spacing: 1.1px;
 
-                &:after {
-                    content: 'U+1F852';
+                &:before {
+                    content: '\1F852';
                     margin-left: 10px;
                     position: relative;
                     top: 2px;
                     left: -25px;
                     opacity: 0;
-                    filter: alpha(opacity=0);
                     transition: .5s all ease-in-out;
+
+                }
+                &:after {
+                    content: '\1F852';
+                    margin-left: 10px;
+                    margin-left: 10px;
+                    position: relative;
+                    top: 2px;
+                    transition: .5s all ease-in-out;
+                    left: 0;
                 }
 
             }

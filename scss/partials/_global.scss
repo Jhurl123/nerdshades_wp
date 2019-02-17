@@ -13,6 +13,10 @@ body {
     font-size: 1.25rem;
     overflow-x: hidden;
 }
+
+html {
+    overflow-x: hidden;
+}
 a {
     text-decoration: none;
 }
@@ -42,4 +46,8 @@ p {
 a {
     text-decoration: none;
     color: $black;
+}
+
+section {
+    position: relative;
 }

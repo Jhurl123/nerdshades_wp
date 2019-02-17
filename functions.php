@@ -126,6 +126,7 @@ function ns_scripts() {
     //Scripts==============
     wp_enqueue_script('ns-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true );
     wp_register_script('slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true );
+    wp_register_script('isotope', get_template_directory_uri(). 'js/isotope.pkgd.min.js', array('jquery'), '', true);
     //wp_enqueue_script( 'ns-foundation-js', get_template_directory_uri() . '/node_modules/foundation-sites/dist/foundation.min.js', array('jquery'), '', true );
 
 }

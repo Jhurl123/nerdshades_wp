@@ -197,7 +197,7 @@ jQuery( document ).ready(function($) {
 
             for(var i = 0; i < Slides.length; i++) {
             
-                if(windowHeight >= (Slides[i].height)) {
+                if((windowHeight) >= Slides[i].height) {
                     Slides[i].slide();
                 }
                else if(windowHeight < piecesSection){
@@ -208,5 +208,21 @@ jQuery( document ).ready(function($) {
         });
 
     }
+
+    function tileHover() {
+        let tileRow = document.querySelector('.tile-row_container');
+        let tile    = tileRow.querySelector('.tile-row_tile');
+        let subHead = tile.querySelector('.tile-row_sub_title');
+
+        tileRow.addEventListener('mouseover', function(e) {
+            console.log(e.target);
+            
+            if(e.target === tile) {
+                console.log("Hy");
+            }
+        });
+    }
+
+    tileHover();
     
 })();

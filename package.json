@@ -25,5 +25,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "isotope-layout": "^3.0.6"
+  }
 }

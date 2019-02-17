@@ -27,9 +27,11 @@
                         
                     ?> 
 
+                <div class="<?= $tiles['class'] . '_tile_container'; ?>">
                     <a class="<?= $tiles['class'] . '_link'; ?>" href="<?= $link['url']; ?>">
-                        <div class="<?= $tiles['class'] . '_tile'; ?>" style="background-image: url(<?= $image[0]; ?>)">
 
+                        <div class="<?= $tiles['class'] . '_tile'; ?>" style="background-image: url(<?= $image[0]; ?>)">
+                    
                             <div class="<?= $tiles['class'] . '_text_container'; ?>">
                                 <?php if($title) :?>
 
@@ -41,16 +43,18 @@
 
                                 <?php if($sub_title) :?>
 
-                                    <span class="<?= $tiles['class'] . '_sub_title'; ?>">
+                                    <div class="<?= $tiles['class'] . '_sub_title'; ?>">
                                         <?= $sub_title; ?>
-                                    </span>
+                                    </div>
                                     
                                 <?php endif; ?>
                             </div>
-
+                        
                         </div>
-                    </a>
 
+                      
+                    </a>
+                </div>              
                 <?php endwhile; ?>
 
             <?php endif;?>
