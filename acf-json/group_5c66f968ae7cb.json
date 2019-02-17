@@ -3,11 +3,11 @@
     "title": "Clone - Tile Row",
     "fields": [
         {
-            "key": "field_5c66f9718ff4b",
-            "label": "Main Image",
-            "name": "image",
-            "type": "image",
-            "instructions": "The product image to appear as the clickable link to the product",
+            "key": "field_5c67022f30465",
+            "label": "Tile Reapeater",
+            "name": "tiles",
+            "type": "repeater",
+            "instructions": "The repeater to hold all of the tile content.(Should contain 3 tiles to complete the row)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,50 +15,90 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5c66fc518ff4c",
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "instructions": "The title of the product shown in the image",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5c66fcbe8ff4d",
-            "label": "Link",
-            "name": "link",
-            "type": "link",
-            "instructions": "The link that clicking on the image leads to. May be a product or existing page.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
+            "collapsed": "",
+            "min": 3,
+            "max": 3,
+            "layout": "block",
+            "button_label": "Add Tile",
+            "sub_fields": [
+                {
+                    "key": "field_5c66f9718ff4b",
+                    "label": "Main Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "The product image to appear as the clickable link to the product",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5c66fc518ff4c",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "The title of the product shown in the image",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c67120a48f73",
+                    "label": "Sub Title",
+                    "name": "sub_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c66fcbe8ff4d",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "The link that clicking on the image leads to. May be a product or existing page.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
         }
     ],
     "location": [
@@ -78,5 +118,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1550253399
+    "modified": 1550258719
 }

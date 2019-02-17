@@ -57,13 +57,11 @@ get_header();
                 case 'tile_row':
                     $tiles = array( 
                         'class'  => 'tile-row',
-                        'image'  => get_sub_field('image'),
-                        'title'  => get_sub_field('title'),
-                        'link'   => get_sub_field('link')
+                        'tile'   => 'tile_row_tiles'
                     );
                     include get_template_directory() . '/template-parts/tile-row.php';
                     break;
-                    
+
                 default:
                     break;
 

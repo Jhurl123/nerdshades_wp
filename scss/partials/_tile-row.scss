@@ -1,0 +1,60 @@
+.tile-row {
+
+    &_container {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    &_link {
+        width: 33.3333%;
+        overflow: hidden;
+
+        .tile-row {
+            &_text_container {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            &_tile {
+                display: flex;
+                height: 35vh;
+                align-items: flex-end;
+                background-position: center;
+                background-size:100%;
+                overflow: hidden;
+                transition: background-size .4s linear;
+               
+                &:hover {
+                    background-size: 115%;
+                }
+
+            }
+
+            &_title {
+                text-align: center;
+                color: $base-color;
+            }
+
+            &_sub_title {
+                text-align: center;
+                color: $base-color;
+
+                &:after {
+                    content: 'U+1F852';
+                    margin-left: 10px;
+                    position: relative;
+                    top: 2px;
+                    left: -25px;
+                    opacity: 0;
+                    filter: alpha(opacity=0);
+                    transition: .5s all ease-in-out;
+                }
+
+            }
+        }
+        
+    }
+    
+}
