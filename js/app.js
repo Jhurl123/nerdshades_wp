@@ -211,15 +211,23 @@ jQuery( document ).ready(function($) {
 
     function tileHover() {
         let tileRow = document.querySelector('.tile-row_container');
-        let tile    = tileRow.querySelector('.tile-row_tile');
-        let subHead = tile.querySelector('.tile-row_sub_title');
-
+    
         tileRow.addEventListener('mouseover', function(e) {
-            console.log(e.target);
             
-            if(e.target === tile) {
-                console.log("Hy");
+            if(e.target.classList.contains('tile-row_tile')) {
+                console.log("Yello");
+                let subHead = e.target.querySelector('.tile-row_sub_title');
+                subHead.classList.add('tile-row_sub_title-open');
             }
+        });
+
+        tileRow.addEventListener('mouseleave', function(e) {
+            let subHead = document.querySelector('.tile-row_sub_title-open');
+            console.log(subHead);
+            if(subHead) {
+                subHead.classList.remove('tile-row_sub_title-open');
+            }
+            
         });
     }
 
