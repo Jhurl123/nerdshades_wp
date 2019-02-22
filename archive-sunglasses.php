@@ -1,10 +1,18 @@
 <?php
+wp_enqueue_script('isotope');
 /*
 *
-* Archive page to show all of the sunglasses on the site
+* The Archive page to display all of the sunglasses post type
 *
 */
-//if no isotope changes are happening, check that jquery dependency
 
-wp_enqueue_script('isotope');
 
+get_header();
+?>
+
+
+
+
+
+
+<?php get_footer(); ?>

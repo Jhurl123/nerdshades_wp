@@ -50,34 +50,37 @@ jQuery( document ).ready(function($) {
 
     }
 
-    $('.product_cards_card_row').slick({
-      
-        adaptiveHeight: true,
-        dots: true,
-        infinite: true,
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1000,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
+    if($('body').is('.page-template-template-page-builder')) {
+        console.log("dsfsd");
+        $('.product_cards_card_row').slick({
+        
+            adaptiveHeight: true,
+            dots: true,
+            infinite: true,
+            arrows: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
 
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            }
-            
-        ]
+                
+            ]
 
-    });
+        });
+    }
     
 
     function buttonHoverHelper()  {
@@ -97,9 +100,6 @@ jQuery( document ).ready(function($) {
     }
     
 });
-
-//iife
-(function() {
 
     //Slide pieces object constructor
     function Slide_piece(element, height, index) {
@@ -152,14 +152,31 @@ jQuery( document ).ready(function($) {
                 }
                 idx = idx-1;
 
-                height = slide.offsetTop;
+                var getElemDistance = function ( elem ) {
+                    var location = 0;
+                    if (elem.offsetParent) {
+                        do {
+                            location += elem.offsetTop;
+                            elem = elem.offsetParent;
+                        } while (elem);
+                    }
+                    return location >= 0 ? location : 0;
+                };
+                
+                height = getElemDistance( slide );
+                console.log(height);
                 return new Slide_piece(slide, height, idx);
             });
             return slides;
     }
 
     var Slides = slide_pieces_init();
-    scrollListener(Slides);
+    var bodyID = document.getElementById('body');
+    console.log(bodyID);
+    
+    if(bodyID.classList.contains('page-template-template-page-builder')) {
+        scrollListener(Slides);
+    }
     
 
     function windowPosLoad() {
@@ -168,17 +185,18 @@ jQuery( document ).ready(function($) {
     }
 
     function windowSize(windowHeight) {
-        var windowHeight = window.outerHeight;
+        var windowHeight = window.innerHeight;
         return windowHeight;
     }
 
     function scrollListener(Slides) {
 
         window.addEventListener('resize', function() {
-           windowSize(window.outerHeight);
+            windowSize(window.outerHeight);
         });
+
         window.addEventListener('load', function() {
-           
+        
             var startPosition = windowPosLoad();
             var windowHeight = windowSize();
             for(var i = 0; i < Slides.length; i++) {
@@ -193,14 +211,16 @@ jQuery( document ).ready(function($) {
             var piecesSection = document.querySelector('.slide_pieces_section').offsetTop;
             var scrollHeight = window.scrollY;
             var windowHeight = windowSize();
-            windowHeight = windowHeight + scrollHeight;
+            windowHeight = scrollHeight - windowHeight;
+            console.log(windowHeight);
 
             for(var i = 0; i < Slides.length; i++) {
-            
-                if((windowHeight) >= Slides[i].height) {
+                console.log(Slides[i].height);
+                if(windowHeight >= Slides[i].height) {
                     Slides[i].slide();
+                    
                 }
-               else if(windowHeight < piecesSection){
+            if(windowHeight <= piecesSection){
                     Slides[i].destroy();
                 }
             }
@@ -209,28 +229,32 @@ jQuery( document ).ready(function($) {
 
     }
 
-    function tileHover() {
-        let tileRow = document.querySelector('.tile-row_container');
-    
-        tileRow.addEventListener('mouseover', function(e) {
+    if(document.body.classList.contains('page-template-template-page-builder')) {
+        function tileHover() {
+            let tileRow = document.querySelector('.tile-row_container');
             
-            if(e.target.classList.contains('tile-row_tile')) {
-                console.log("Yello");
-                let subHead = e.target.querySelector('.tile-row_sub_title');
-                subHead.classList.add('tile-row_sub_title-open');
-            }
-        });
+        
+            tileRow.addEventListener('mouseover', function(e) {
+                
+                if(e.target.classList.contains('tile-row_tile')) {
+                    let subHead = e.target.querySelector('.tile-row_sub_title');
+                    subHead.classList.add('tile-row_sub_title-open');
+                }
+            });
 
-        tileRow.addEventListener('mouseleave', function(e) {
-            let subHead = document.querySelector('.tile-row_sub_title-open');
-            console.log(subHead);
-            if(subHead) {
-                subHead.classList.remove('tile-row_sub_title-open');
-            }
+            tileRow.addEventListener('mouseout', function(e) {
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                let tileText = e.target.querySelector('.tile-row_text_container');
+                let tileHead = e.target.querySelector('.tile-row_title');
+                let subHead  = e.target.querySelector('.tile-row_sub_title-open');
             
-        });
+                if(e.target.classList.contains('tile-row_tile') && e.relatedTarget !==  tileText && e.relatedTarget !== tileHead
+                && e.relatedTarget !== subHead) {
+                    
+                    subHead.classList.remove('tile-row_sub_title-open');
+                }
+                
+            });
+        }
     }
-
-    tileHover();
-    
-})();
