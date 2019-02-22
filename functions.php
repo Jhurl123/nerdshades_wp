@@ -105,10 +105,49 @@ function ns_custom_post_types() {
     );
 
     //ACF to handle any additional categories or field work
-    register_taxonomy( 'sunglasses_categories', 'sunglasses',
+    $labels = array(
+        'name'              => _x( 'Person Type','textdomain' ),
+		'singular_name'     => _x( 'Person Type', 'textdomain' ),
+		'search_items'      => __( 'Search Person Types', 'textdomain' ),
+		'all_items'         => __( 'All Person Types', 'textdomain' ),
+		'edit_item'         => __( 'Edit Person Type', 'textdomain' ),
+		'update_item'       => __( 'Update Person Type', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Person Type', 'textdomain' ),
+		'new_item_name'     => __( 'New Person Type', 'textdomain' ),
+		'menu_name'         => __( 'Person Types', 'textdomain' ),
+    );
+
+    register_taxonomy(
+        'person_type',
+        'sunglasses',
         array(
-            'label' => __( 'Category' ),
-            'hierarchical' => true
+            'labels'      => $labels,
+            'rewrite'     => array('slug' =>'gender'),
+            'hierarchical' => true,
+            'query_var'   => true
+        )
+    );
+
+    $labels = array(
+        'name'              => _x( 'Sunglasses Type','textdomain' ),
+		'singular_name'     => _x( 'Sunglasses Type', 'textdomain' ),
+		'search_items'      => __( 'Search Sunglasses Types', 'textdomain' ),
+		'all_items'         => __( 'All Sunglasses Types', 'textdomain' ),
+		'edit_item'         => __( 'Edit Sunglasses Type', 'textdomain' ),
+		'update_item'       => __( 'Update Sunglasses Type', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Sunglasses Type', 'textdomain' ),
+		'new_item_name'     => __( 'New Sunglasses Type', 'textdomain' ),
+		'menu_name'         => __( 'Sunglasses Types', 'textdomain' ),
+    );
+
+    register_taxonomy(
+        'sunglasses_type',
+        'sunglasses',
+        array(
+            'labels'      => $labels,
+            'rewrite'     => array('slug' =>'sunglasses-type'),
+            'hierarchical' => true,
+            'query_var'   => true
         )
     );
 }
@@ -145,6 +184,39 @@ class footer_Menu_Walker extends Walker_Nav_Menu {
 		$output .= "\n$indent<ul class=\"vertical clearfix navigation_drop-nav\">\n";
 	}
 }
+
+
+function breadCrumbs() {
+    //filter function called in all products pages
+    //Use conditional to optionally return; when not a products page, or necessary page for breadcrumbs
+
+    if(is_home()) {
+        return;
+    }
+
+
+    //When page is correct, execute logic to gather breadcrumbs 
+
+    //returns string
+    $post_type = get_post_type();
+    $crumbs = get_term_by("name", get_query_var("term"), get_query_var("taxonomy") );
+
+    if(!$crumbs) {
+        $crumbs = ucfirst($post_type);
+    }
+    
+
+    //Call ob_start to get breadcrumbs.php  and catch result and return it to function
+
+    ob_start();
+        include get_template_directory() . '/template-parts/header/breadcrumbs.php';
+    $term = ob_get_clean();
+
+    echo $term;
+
+
+}
+add_action('breadcrumb_filter', 'breadcrumbs');
 
 
 

@@ -3614,4 +3614,14 @@ section {
     .tile-row_link .tile-row_sub_title-open:after {
       opacity: 0; }
 
+.breadcrumb_container {
+  padding: 4rem 0 4rem 4rem;
+  width: 100%; }
+
+.breadcrumb_list li {
+  display: inline-block; }
+
+.breadcrumb_separator {
+  white-space: pre; }
+
 /*# sourceMappingURL=style.css.map */

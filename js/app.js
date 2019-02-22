@@ -105,8 +105,8 @@ jQuery( document ).ready(function($) {
     function Slide_piece(element, height, index) {
 
         this.element = element;
-        this.height = height;
-        this.index = index;
+        this.height  = height;
+        this.index   = index;
            
     }
 
@@ -172,22 +172,23 @@ jQuery( document ).ready(function($) {
 
     var Slides = slide_pieces_init();
     var bodyID = document.getElementById('body');
-    console.log(bodyID);
     
     if(bodyID.classList.contains('page-template-template-page-builder')) {
         scrollListener(Slides);
     }
     
-
+    //the position of the window on load
     function windowPosLoad() {
         loadPosition = window.scrollY;
         return loadPosition;
     }
 
+    //function to get window height that gets called on resize
     function windowSize(windowHeight) {
         var windowHeight = window.innerHeight;
         return windowHeight;
     }
+
 
     function scrollListener(Slides) {
 
@@ -195,10 +196,11 @@ jQuery( document ).ready(function($) {
             windowSize(window.outerHeight);
         });
 
+        //Event listener tocall the functions to get the size and postion on load
         window.addEventListener('load', function() {
         
             var startPosition = windowPosLoad();
-            var windowHeight = windowSize();
+            var windowHeight  = windowSize();
             for(var i = 0; i < Slides.length; i++) {
             if((startPosition +windowHeight) >= Slides[0].height) {
                 Slides[i].slide();
@@ -206,25 +208,27 @@ jQuery( document ).ready(function($) {
         }
         });
 
+        //window scroll event listener to trigger the slidein/out functionality 
         window.addEventListener('scroll', function() {
             
+            //height of container section from top of page
             var piecesSection = document.querySelector('.slide_pieces_section').offsetTop;
-            var scrollHeight = window.scrollY;
-            var windowHeight = windowSize();
-            windowHeight = scrollHeight - windowHeight;
+            var scrollHeight  = window.scrollY;
+            var windowHeight  = windowSize();
+            windowHeight      = scrollHeight + windowHeight;
             console.log(windowHeight);
 
             for(var i = 0; i < Slides.length; i++) {
-                console.log(Slides[i].height);
-                if(windowHeight >= Slides[i].height) {
+                console.log(Slides[i].element.clientHeight);
+                if((windowHeight + (Slides[i].element.clientHeight * 2))  >= Slides[i].height) {
                     Slides[i].slide();
                     
                 }
-            if(windowHeight <= piecesSection){
-                    Slides[i].destroy();
+                if(windowHeight <= piecesSection){
+                        Slides[i].destroy();
                 }
+                
             }
-
         });
 
     }
@@ -257,4 +261,5 @@ jQuery( document ).ready(function($) {
                 
             });
         }
+        tileHover();
     }
